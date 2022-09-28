@@ -1,0 +1,222 @@
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+
+<!------ Include the above in your HEAD tag ---------->
+
+<body>
+    <div class="container h-100">
+
+
+		<div class="row h-100 justify-content-center align-items-center">
+			<div class="card">
+				<h1 class="card-header">creér compte</h1>
+				<div class="card-body">
+					<div class="alert alert-danger" role="alert">
+                        1- Décret N° 2012/3731 du 13 novembre 2012 :<br>
+						Sans préjudice de poursuites pénales pour fraude fiscale, donne lieu à une amende de FCFA 1 000 000 par opération,
+                        l’utilisation frauduleuse d’un numéro identifiant fiscal ou comportant des indications erronées.<br>
+                        2- Loi des finances 2020. Article L104 bis :<br>
+                        Une amende forfaitaire pouvant aller jusqu'à FCFA 100 000 000 est appliquée à toute personne ayant frauduleusement facilité, procédé ou tenté de procéder<br>
+                        à l'accomplissement d'une obligation fiscale ou l'obtention de documents fiscaux en ligne.
+					</div>
+					<form [formGroup]="creeCompteForm" (ngSubmit)="createCompteProjet()" data-toggle="validator" role="form" method="post" action="#">
+						<input type="hidden" class="hide" id="csrf_token" name="csrf_token" value="C8nPqbqTxzcML7Hw0jLRu41ry5b9a10a0e2bc2">
+
+                        <div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>nom </label>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+										</div>
+										<input type="text" class="form-control" name="nom"  formControlName="nom">
+									</div>
+									<div class="help-block with-errors text-danger"></div>
+								</div>
+							</div>
+						</div>
+
+            <div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>prenom </label>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+										</div>
+										<input type="text" class="form-control" name="prenom" formControlName="prenom" >
+									</div>
+									<div class="help-block with-errors text-danger"></div>
+								</div>
+							</div>
+						</div>
+
+
+                        <div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label> numéro de telephone </label>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+										</div>
+										<input type="number" formControlName="telephone" class="form-control" name="number" value="" pattern=".{9,}" title="(9 caracteres ou plus)" required="">
+									</div>
+									<div class="help-block with-errors text-danger"></div>
+								</div>
+							</div>
+						</div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Fonction </label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="fonction" formControlName="fonction" >
+                  </div>
+                  <div class="help-block with-errors text-danger"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Ville </label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="ville" formControlName="ville" >
+                  </div>
+                  <div class="help-block with-errors text-danger"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Commune </label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="commune" formControlName="commune" >
+                  </div>
+                  <div class="help-block with-errors text-danger"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Quartier </label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="quartier" formControlName="quartier" >
+                  </div>
+                  <div class="help-block with-errors text-danger"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Pays </label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+                    </div>
+                    <input type="text" class="form-control" name="pays" formControlName="pays" >
+                  </div>
+                  <div class="help-block with-errors text-danger"></div>
+                </div>
+              </div>
+            </div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>E-mail ou numéro de telephone </label>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
+										</div>
+										<input type="email" formControlName="email" class="form-control" name="login_email" value="" pattern=".{9,}" title="(9 caracteres ou plus)" required="">
+									</div>
+									<div class="help-block with-errors text-danger"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+
+
+								<div class="form-group">
+									<label>mot de passe</label>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+										</div>
+										<input type="password" formControlName="password" name="login_password" class="form-control" pattern=".{10,}" title="mot de passe (8 caracteres ou moins)" required="">
+									</div>
+									<div class="help-block with-errors text-danger"></div>
+								</div>
+							</div>
+						</div>
+
+                        <div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label> confirmez le mot de passe</label>
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fa fa-unlock" aria-hidden="true"></i></span>
+										</div>
+										<input class="form-control" placeholder="Repeat password" type="password" formControlName="confirmpassword">
+									</div>
+									<div class="help-block with-errors text-danger"></div>
+								</div>
+							</div>
+						</div>
+
+							<!-- ======= Header =======
+						<div class="row">
+							<div class="checkbox checkbox-primary">
+								<input id="checkbox_remember" type="checkbox" name="remember">
+								<label for="checkbox_remember"> </label>
+							</div>
+
+						</div>
+						-->
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="pull-right">
+                  <button type="submit">accepter et creér compte</button>
+									<!--<a class="btn btn-warning btn-lg" type="submit" id="btnToTop"><i class="fa fa-arrow-up"></i> accepter et creér compte</a>-->
+								</div>
+							</div>
+						  </div>
+					</form>
+					<div class="clear"></div>
+					<i class="fa fa-user fa-fw"></i>  <a href="#"></a><br>
+					<i class="fa fa-undo fa-fw"></i>  <a href="#">retour</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</body>
+
+
