@@ -12,7 +12,7 @@ import { PageutilisateurComponent } from './pageutilisateur/pageutilisateur.comp
 import { PageadminComponent } from './pageadmin/pageadmin.component';
 import { CompuilisateurComponent } from './compuilisateur/compuilisateur.component';
 import { DeclarationComponent } from './declaration/declaration.component';
-
+import { ProfilComponent } from './profil/profil.component';
 
 const routes: Routes = [
   {
@@ -49,7 +49,7 @@ const routes: Routes = [
     component: DeclarationComponent
   },
   {
-    path:'pageadmin',
+    path:'page admin',
     component: PageadminComponent
   },
   {
@@ -57,14 +57,18 @@ const routes: Routes = [
     component: GuideComponent
   },
   {
-    path:'pageutilisateur',
+    path:'page utilisateur',
     component: PageutilisateurComponent
 
   },
   {
-    path:'compteutilisateur',
+    path:'compte utilisateur',
     component: CompuilisateurComponent
-  }
+  },
+  {
+    path:'profil',
+    component: ProfilComponent
+  },
 ];
 
 

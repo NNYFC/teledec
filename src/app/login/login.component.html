@@ -2,8 +2,43 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<body>
 
-    <div class="wrapper fadeInDown">
+<!-- ======= Header ======= -->
+
+<header id="header" class="fixed-top ">
+  <div class="container-fluid">
+
+    <div class="row justify-content-center">
+      <div class="col-xl-9 d-flex align-items-center justify-content-lg-between">
+        <h1 class="logo me-auto me-lg-0">teledec</h1>
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul class="part">
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#cta">Services</a></li>
+            <li><a class="nav-link scrollto " routerLink="/login" href="">login</a></li>
+            
+
+            
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+
+
+
+
+
+
+
+    <div class="wrapper fadeInDown" style="margin-top: 80px;">
         <div id="formContent">
           <!-- Tabs Titles -->
 
@@ -12,7 +47,7 @@
             <img src="./../../assets/image2.jpg" id="icon" alt="User Icon" />
             <h1>login</h1>
           </div>
-          <h6 style="color:orange">{{response}}</h6>
+          <h6 style="color:rgb(221, 19, 15)">{{response}}</h6>
 
           <!-- Login Form -->
           <form [formGroup]="loginForm" (ngSubmit)="loginProjet()">
@@ -20,22 +55,25 @@
             <input type="email" name="email" id="email"  formControlName="email"  class="form-control input-lg" placeholder="Email Address" tabindex="2">
 
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="col-xs-12 col-sm-2 col-md-12">
+                  <label> </label>
                     <div class="form-group">
                         <input type="password" name="password" id="password" formControlName="password" class="form-control input-lg" placeholder="Password" tabindex="5">
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-
+                <div class="col-xs-12 col-sm-3 col-md-10">
+                 
+                  <!-- 
+                  <a class="underlineHover" href="creer-compte.html">mot de passe oublié</a> -->
+                <label>   <h5>remplir les champs et s'identifier</h5></label>
+                  <button type="submit"> s'identifier</button>
                 </div>
             </div>
-            <a class="underlineHover" href="creer-compte.html">mot de passe oublié</a>
-
-            <button type="submit"> s'identifier</button>
+            
 
           </form>
           <div id="formFooter">
-            <h5>remplir les champs et s'identifier</h5>
+          
 
            <!--
             <a class="underlineHover" routerLink="/declaration" href="">s'identifier</a> -->
@@ -56,3 +94,4 @@
 
         </div>
       </div>
+      </body>   

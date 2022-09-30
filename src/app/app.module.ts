@@ -20,6 +20,7 @@ import { PageadminComponent } from './pageadmin/pageadmin.component';
 import { GuideComponent } from './guide/guide.component';
 import { PageutilisateurComponent } from './pageutilisateur/pageutilisateur.component';
 import { CompuilisateurComponent } from './compuilisateur/compuilisateur.component';
+import { ProfilComponent } from './profil/profil.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CompuilisateurComponent } from './compuilisateur/compuilisateur.compone
 
     GuideComponent,
     PageutilisateurComponent,
-    CompuilisateurComponent
+    CompuilisateurComponent,
+    ProfilComponent
   ],
   imports: [
       BrowserModule,
