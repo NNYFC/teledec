@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   
-  background: url("./../../assets/image4.png")  repeat ;
+  background: rgb(204, 203, 199) ;
   background-position: center;
   height: 100%;
   width: 100%;
@@ -300,7 +300,7 @@ h1{
 
 .back-to-top i {
   font-size: 28px;
-  color: rgb(55, 75, 11);
+  color: rgb(209, 235, 154);
   line-height: 0;
 }
 
@@ -612,7 +612,7 @@ h1{
   z-index: 99;
   opacity: 1;
   visibility: visible;
-  background: rgba(31, 63, 2, 0.671);
+  background: rgba(225, 238, 213, 0.671);
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 

@@ -282,22 +282,18 @@
                 <ul id="forms-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
                   <li>
                     <a href="" class="active">
-                      <i class="bi bi-circle"></i><span>creér compte</span>
+                      <i class="bi bi-circle"></i><span>gestions des comptes</span>
                     </a>
                   </li>
                   <li>
                     <a href="forms-layouts.html">
-                      <i class="bi bi-circle"></i><span> modifier</span>
+                      <i class="bi bi-circle"></i><span> gestion des contribuables</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="forms-editors.html">
-                      <i class="bi bi-circle"></i><span>valider compte</span>
-                    </a>
-                  </li>
+                  
                   <li>
                     <a href="forms-validation.html">
-                      <i class="bi bi-circle"></i><span>rejetter</span>
+                      <i class="bi bi-circle"></i><span>forum</span>
                     </a>
                   </li>
                 </ul>
@@ -311,7 +307,7 @@
              
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="users-profile.html">
+                <a class="nav-link collapsed"  routerLink="/profil"href="#">
                   <i class="bi bi-person"></i>
                   <span>Profile</span>
                 </a>
@@ -329,7 +325,7 @@
               <!-- End Register Page Nav -->
         
               <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-login.html">
+                <a class="nav-link collapsed"routerLink="/page admin"href="#">
                   <i class="bi bi-box-arrow-in-right"></i>
                   <span>retour</span>
                 </a>
@@ -368,7 +364,7 @@
           
 
                 <div class="row"  >
-                    <div class="col-lg-12"     style="min-height: 800px;">
+                    <div class="col-lg-12"     style="min-height: 900px;">
                         <label class="control-label"></label>
 
                         <table class="table table-primary">
@@ -391,7 +387,9 @@
                                     <th>
                                        Action
                                     </th>
-                                    
+                                    <th>
+                                      
+                                   </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -419,6 +417,11 @@
                                           <a class="btn btn-warning btn-lg" routerLink="/teledeclaration"  href="#" id="btnToTop"><i class="fa fa-arrow-up"></i> modifier</a>
                                         </label>
                                     </td>
+
+                                    <div class="pull-right">
+                                      <a href="#" class="btn btn-outline-secondary btn-lg" id="btnSubmit"><i class="fa fa-save"></i> valider</a>
+                                     
+                                  </div>
                                 </tr>
                                 <tr>
                                     <td>
@@ -438,65 +441,30 @@
                                         </label>
                                     </td>
                                     <td>
-                                        <label class="control-label">
-                                          <a class="btn btn-warning btn-lg" routerLink="/teledeclaration"  href="#" id="btnToTop"><i class="fa fa-arrow-up"></i> desactiver</a>
-                                        </label>
+                                      <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="pull-right">
+ 
+                                                <a class="btn btn-warning btn-lg" routerLink="/teledeclaration"  href="#" id="btnToTop"><i class="fa fa-arrow-up"></i> modifier</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </td>
+
+                                    <td>
+                                      <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="pull-right">
+                                                <a href="#" class="btn btn-outline-secondary btn-lg" id="btnSubmit"><i class="fa fa-save"></i> valider</a>
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
                                     </td>
                                     
                                 </tr>
-                                <tr>
-                                    <td>
-                                        03
-                                    </td>
-                                    <td>
-                                        <label class="control-label">
-                                            <input type="text">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="control-label">
-                                            <input type="text">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="control-label">
-                                            <input type="text">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="control-label">
-                                          <a class="btn btn-warning btn-lg" routerLink="/teledeclaration"  href="#" id="btnToTop"><i class="fa fa-arrow-up"></i></a>
-                                        </label>
-                                    </td>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>
-                                       04 
-                                    </td>
-                                    <td>
-                                        <label class="control-label">
-                                            <input type="text">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="control-label">
-                                            <input type="text">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="control-label">
-                                            <input type="text">
-                                        </label>
-                                    </td>
-                                    <td>
-                                        <label class="control-label">
-                                          <a class="btn btn-warning btn-lg" routerLink="/teledeclaration"  href="#" id="btnToTop"><i class="fa fa-arrow-up"></i> </a>
-                                        </label>
-                                    </td>
-                                    
-                                   
-                                </tr>
+                               
+                                
                                 <tr>
                                     <td>
                                        05
@@ -519,11 +487,14 @@
                                     <td>
                                         <label class="control-label">
                                            
-                                            <a class="btn btn-warning btn-lg" routerLink="/teledeclaration"  href="#" id="btnToTop"><i class="fa fa-arrow-up"></i></a>
+                                            <a class="btn btn-warning btn-lg" routerLink="/teledeclaration"  href="#" id="btnToTop"><i class="fa fa-arrow-up">modifier</i></a>
                                         </label>
                                     </td>
 
-                                   
+                                    <div class="pull-right">
+                                      <a href="#" class="btn btn-outline-secondary btn-lg" id="btnSubmit"><i class="fa fa-save"></i> valider</a>
+                                     
+                                  </div>
                                 </tr>
   
                             </tbody>
@@ -532,7 +503,7 @@
                         <div class="row">
                           <div class="col-lg-12">
                               <div class="pull-right">
-                                  <a href="#" class="btn btn-success btn-lg" id="btnSubmit"><i class="fa fa-save"></i> créer compte</a>
+                                  <a  routerLink="/compte utilisateur"href="#" class="btn btn-outline-secondary btn-lg" id="btnSubmit"><i class="fa fa-save"></i> créer compte</a>
 
                               </div>
                           </div>

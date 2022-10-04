@@ -13,6 +13,7 @@ import { PageadminComponent } from './pageadmin/pageadmin.component';
 import { CompuilisateurComponent } from './compuilisateur/compuilisateur.component';
 import { DeclarationComponent } from './declaration/declaration.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ContribuableComponent } from './contribuable/contribuable.component';
 
 const routes: Routes = [
   {
@@ -42,7 +43,7 @@ const routes: Routes = [
   },
   {
     path:'contact',
-    component:  ContactComponent
+    component:ContactComponent
   },
   {
     path:'declaration',
@@ -68,6 +69,11 @@ const routes: Routes = [
   {
     path:'profil',
     component: ProfilComponent
+  },
+
+  {
+    path:'contribuable',
+    component: ContribuableComponent 
   },
 ];
 

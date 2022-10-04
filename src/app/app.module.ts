@@ -21,6 +21,7 @@ import { GuideComponent } from './guide/guide.component';
 import { PageutilisateurComponent } from './pageutilisateur/pageutilisateur.component';
 import { CompuilisateurComponent } from './compuilisateur/compuilisateur.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ContribuableComponent } from './contribuable/contribuable.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProfilComponent } from './profil/profil.component';
     GuideComponent,
     PageutilisateurComponent,
     CompuilisateurComponent,
-    ProfilComponent
+    ProfilComponent,
+    ContribuableComponent
   ],
   imports: [
       BrowserModule,
