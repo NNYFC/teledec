@@ -50,18 +50,19 @@ export class LoginComponent implements OnInit {
                            this.userPassword = this.loginForm.value.password;
                            sessionStorage.setItem('emailvalue', this.userEmail);
                            sessionStorage.setItem('passwordvalue', this.userPassword);
-                           if(this.userEmail == 'admin@admin.com'){
-                            this.userType = 'admin';
-                           }else{
-                            this.userType = 'driver';
-                            sessionStorage.setItem('userId',this.response.iddriver)
-                           }
+
+                           this.userType = this.response.id_role.nom;
                            sessionStorage.setItem('userTypevalue', this.userType);
+
+                           sessionStorage.setItem('userId',this.response.id);
 
                            this.pauseTimer();
                            this.loaderShow = false;
 
-                           this.router.navigate(['home']);
+                           if(this.response.id_role.nom == 'CONTRIBUABLE'){
+                            this.router.navigate(['declaration']);
+                           }
+
 
                           },error => {
                            if(error.status==0){

@@ -46,8 +46,15 @@
           </div>
           <h6 style="color:rgb(221, 19, 15)">{{response}}</h6>
 
+
           <!-- Login Form -->
           <form [formGroup]="loginForm" (ngSubmit)="loginProjet()">
+
+            <div *ngIf="loaderShow" class="d-flex justify-content-center">
+              <div class="spinner-border text-warning" style="width: 4rem; height: 5rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
 
             <input type="email" name="email" id="email"  formControlName="email"  class="form-control input-lg" placeholder="Email Address" tabindex="2">
 
@@ -59,18 +66,18 @@
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-md-10">
-                 
-                  <!-- 
+
+                  <!--
                   <a class="underlineHover" href="creer-compte.html">mot de passe oublié</a> -->
                 <label>   <h5>remplir les champs et s'identifier</h5></label>
                   <button type="submit"> s'identifier</button>
                 </div>
             </div>
-            
+
 
           </form>
           <div id="formFooter">
-          
+
 
            <!--
             <a class="underlineHover" routerLink="/declaration" href="">s'identifier</a> -->
@@ -91,4 +98,4 @@
 
         </div>
       </div>
-      </body>   
+      </body>

@@ -127,19 +127,10 @@ export class CreerCompteComponent implements OnInit {
                              this.response = res;
                              console.log(this.response);
 
-
-                             if(this.userEmail == 'admin@admin.com'){
-
-                             }else{
-
-
-                             }
-
-
                              this.pauseTimer();
                              this.loaderShow = false;
 
-                             this.router.navigate(['home']);
+                             this.router.navigate(['login']);
 
                             },error => {
                              if(error.status==0){
