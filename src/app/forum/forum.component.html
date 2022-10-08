@@ -5,10 +5,6 @@
 
 
 
-<body>
-
-
-
 
 <!-- ======= Header ======= -->
 
@@ -20,23 +16,25 @@
         <h1 class="logo me-auto me-lg-0">teledec</h1>
         <nav id="navbar" class="navbar order-last order-lg-0">
           <ul class="part">
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="#about">About</a></li>
             <li><a class="nav-link scrollto" href="#cta">Services</a></li>
-            <li><a class="nav-link scrollto " routerLink="/login" href="">login</a></li>
-            
-            <li><a class="nav-link scrollto " routerLink="/forum" href="">forum</a></li>
+            <li><a class="nav-link scrollto " (click)="exitApp()" href="">logout</a></li>
+
+            <li><a class="nav-link scrollto active" routerLink="/forum" href="">forum</a></li>
+
+            <li *ngIf="userType === 'ADMIN'"><a class="nav-link scrollto active" routerLink="/page admin" href="">declaration</a></li>
 
             <ul class="nav navbar-nav">
 
-              <li class="dropdown">
+              <li *ngIf="userType != 'ADMIN'" class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">declaration <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-    
-                  <li><a   class="nav-link scrollto"routerLink="/forum"    href="#">forum</a></li>
-                  <li><a    class="nav-link scrollto"routerLink="/contact"href="#">contact</a></li>
+
+                  <li><a   class="nav-link scrollto active"routerLink="/forum"    href="">forum</a></li>
+                  <li><a    class="nav-link scrollto"routerLink="/contact"href="">contact</a></li>
                   <li class="divider"></li>
-                  <li><a  class="nav-link scrollto"routerLink="/paiement"   href="#">paiement</a></li>
+                  <li><a  class="nav-link scrollto"routerLink="/paiement"   href="">paiement</a></li>
                   <li class="divider"></li>
                 </ul>
               </li>
@@ -58,52 +56,37 @@
 <h3 class=" text-center"><form action=""></form></h3>
 <div class="messaging">
       <div class="inbox_msg">
-        
-        
+
         <div class="mesgs">
-          <div class="msg_history">
-            <div class="incoming_msg">
-              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+
+          <div class="msg_history" *ngFor="let message of messagesList">
+            <div *ngIf="message.id_personne.id != userId" class="incoming_msg">
+              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">{{message.id_personne.nom}} </div>
               <div class="received_msg">
                 <div class="received_withd_msg">
-                  <p>
-                    solutions</p>
-                  <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                  <p>{{message.libelle}}</p>
+                  <span class="time_date"> {{message.date}}</span></div>
               </div>
             </div>
-            <div class="outgoing_msg">
+            <div *ngIf="message.id_personne.id==userId" class="outgoing_msg">
               <div class="sent_msg">
-                <p>
-                  solutions</p>
-                <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                <p>{{message.libelle}}</p>
+                <span class="time_date">{{message.date}}</span> </div>
             </div>
-            <div class="incoming_msg">
-              <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
-              <div class="received_msg">
-                <div class="received_withd_msg">
-                  <p>salut </p>
-                  <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+
+
+          </div>
+          <form [formGroup]="loginForm" (ngSubmit)="loginProjet()">
+            <div class="type_msg">
+              <div class="input_msg_write">
+                <input formControlName="message"  type="text" class="write_msg" placeholder="Type a message" />
+                <button class="msg_send_btn" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true">Envoye</i></button>
               </div>
             </div>
-            <div class="outgoing_msg">
-              <div class="sent_msg">
-                <p>Apollo </p>
-                <span class="time_date"> 11:01 AM    |    Today</span> </div>
-            </div>
-            
-          </div>
-          <div class="type_msg">
-            <div class="input_msg_write">
-              <input type="text" class="write_msg" placeholder="Type a message" />
-              <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
-            </div>
-          </div>
+          </form>
+
         </div>
+
       </div>
-      
-      
-   
-      
-    </div></div>
-    </body>
-    
+
+

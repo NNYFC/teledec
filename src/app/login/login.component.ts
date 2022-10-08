@@ -63,6 +63,10 @@ export class LoginComponent implements OnInit {
                             this.router.navigate(['declaration']);
                            }
 
+                           if(this.response.id_role.nom == 'ADMIN'){
+                                this.router.navigate(['page admin']);
+                           }
+
 
                           },error => {
                            if(error.status==0){

@@ -24,7 +24,7 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  
+
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.3.1
@@ -70,8 +70,8 @@
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-           
-          
+
+
 
           </ul><!-- End Profile Dropdown Items -->
         </li><!-- End Profile Nav -->
@@ -89,73 +89,56 @@
      <!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        
+
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-         
-        
-          
-         
-          
-          
-          
-          
-          
-          
-          
-         
-          
-          
+
+
+
         </ul>
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse"   routerLink="/page utilisateur"href="#">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse"   routerLink="/page utilisateur"href="">
           <i class="bi bi-journal-text"></i><span>gestion des comptes</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-       
+
       </li><!-- End Forms Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse"  routerLink="/contribuable"href="#">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse"  routerLink="/contribuable"href="">
           <i class="bi bi-layout-text-window-reverse"></i><span>gestion des contribuable</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      
+
       </li><!-- End Tables Nav -->
 
-    
-
-     <!-- End Icons Nav -->
-
-    
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  routerLink="/profil"href="#">
+        <a class="nav-link collapsed"  routerLink="/profil"href="">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" routerLink="/forum"href="#" >
+        <a class="nav-link collapsed" routerLink="/forum"href="" >
           <i class="bi bi-question-circle"></i>
           <span>Forum</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  routerLink="/contact"href="#">
+        <a class="nav-link collapsed"  routerLink="/contact"href="">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
 
-     <!-- End Register Page Nav -->
-
-     <!-- End Login Page Nav -->
-
-      <!-- End Error 404 Page Nav -->
-
-      <!-- End Blank Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" (click)="exitApp()" href="">
+          <i class="bi bi-envelope"></i>
+          <span>Logout</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
 
     </ul>
 
@@ -165,12 +148,6 @@
 
     <div class="pagetitle">
       <h1>Dashboard</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Dashboard</li>
-        </ol>
-      </nav>
     </div><!-- End Page Title -->
 
     <section class="section dashboard">
@@ -184,9 +161,26 @@
             <div class="col-xxl-4 col-md-6">
               <div class="card info-card sales-card">
 
-                
-
-                
+                <table id="myTable">
+                  <tr>
+                    <th>Nom</th>
+                    <th>Commune</th>
+                    <th>Sigle Societe</th>
+                    <th>Raison Social</th>
+                    <th>Regime D'imposition</th>
+                    <th>Exercice Fiscal</th>
+                    <th>Date de Declaration</th>
+                  </tr>
+                  <tr *ngFor="let declaration of declarationList">
+                    <td>{{declaration.id_personne.nom}} {{declaration.id_personne.prenom}}</td>
+                    <td>{{declaration.id_personne.commune}}</td>
+                    <td>{{declaration.sigle_societe}}</td>
+                    <td>{{declaration.raison_social}}</td>
+                    <td>{{declaration.regime_imposition}}</td>
+                    <td>{{declaration.exercice_fiscal}}</td>
+                    <td>{{declaration.date}}</td>
+                  </tr>
+                </table>
 
               </div>
             </div><!-- End Sales Card -->
@@ -194,25 +188,18 @@
             <!-- Revenue Card -->
            <!-- End Revenue Card -->
 
-            <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
-
-              <div class="card info-card customers-card">
-              </div>
-
-            </div><!-- End Customers Card -->
 
             <!-- Reports -->
             <div class="col-12">
               <div class="card">
 
-               
+
 
                 <div class="card-body">
-                
+
 
                   <!-- Line Chart -->
-                 
+
 
                   <script>
                     document.addEventListener("DOMContentLoaded", () => {
@@ -282,187 +269,23 @@
           </div>
         </div><!-- End Left side columns -->
 
-        <!-- Right side columns -->
-        <div class="col-lg-4">
-
-          <!-- Recent Activity -->
-          <div class="card">
-          
-
-            <div class="card-body">
-             
-
-              <div class="activity">
-
-                <!-- End activity item-->
-
-               <!-- End activity item-->
-
-               <!-- End activity item-->
-
-               <!-- End activity item-->
-
-                <!-- End activity item-->
-
-                <!-- End activity item-->
-
-              </div>
-
-            </div>
-          </div><!-- End Recent Activity -->
-
-          <!-- Budget Report -->
-          <div class="card">
-            
-
-            <div class="card-body pb-0">
-          
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  var budgetChart = echarts.init(document.querySelector("#budgetChart")).setOption({
-                    legend: {
-                      data: ['Allocated Budget', 'Actual Spending']
-                    },
-                    radar: {
-                      // shape: 'circle',
-                      indicator: [{
-                          name: 'Sales',
-                          max: 6500
-                        },
-                        {
-                          name: 'Administration',
-                          max: 16000
-                        },
-                        {
-                          name: 'Information Technology',
-                          max: 30000
-                        },
-                        {
-                          name: 'Customer Support',
-                          max: 38000
-                        },
-                        {
-                          name: 'Development',
-                          max: 52000
-                        },
-                        {
-                          name: 'Marketing',
-                          max: 25000
-                        }
-                      ]
-                    },
-                    series: [{
-                      name: 'Budget vs spending',
-                      type: 'radar',
-                      data: [{
-                          value: [4200, 3000, 20000, 35000, 50000, 18000],
-                          name: 'Allocated Budget'
-                        },
-                        {
-                          value: [5000, 14000, 28000, 26000, 42000, 21000],
-                          name: 'Actual Spending'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
-
-            </div>
-          </div><!-- End Budget Report -->
-
-          <!-- Website Traffic -->
-          <div class="card">
-            
-
-            <div class="card-body pb-0">
-             
-
-              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
-
-              <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  echarts.init(document.querySelector("#trafficChart")).setOption({
-                    tooltip: {
-                      trigger: 'item'
-                    },
-                    legend: {
-                      top: '5%',
-                      left: 'center'
-                    },
-                    series: [{
-                      name: 'Access From',
-                      type: 'pie',
-                      radius: ['40%', '70%'],
-                      avoidLabelOverlap: false,
-                      label: {
-                        show: false,
-                        position: 'center'
-                      },
-                      emphasis: {
-                        label: {
-                          show: true,
-                          fontSize: '18',
-                          fontWeight: 'bold'
-                        }
-                      },
-                      labelLine: {
-                        show: false
-                      },
-                      data: [{
-                          value: 1048,
-                          name: 'Search Engine'
-                        },
-                        {
-                          value: 735,
-                          name: 'Direct'
-                        },
-                        {
-                          value: 580,
-                          name: 'Email'
-                        },
-                        {
-                          value: 484,
-                          name: 'Union Ads'
-                        },
-                        {
-                          value: 300,
-                          name: 'Video Ads'
-                        }
-                      ]
-                    }]
-                  });
-                });
-              </script>
-
-            </div>
-          </div><!-- End Website Traffic -->
-
-          <!-- News & Updates Traffic -->
-          <div class="card">
-            
-
-            <!-- End sidebar recent posts-->
-
-            </div>
-          </div><!-- End News & Updates -->
 
         </div><!-- End Right side columns -->
 
-     
+
     </section>
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-    
+
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-    
+
     </div>
   </footer><!-- End Footer -->
 
@@ -484,4 +307,3 @@
 </body>
 
 </html>
-               

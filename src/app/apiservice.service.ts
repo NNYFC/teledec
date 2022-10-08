@@ -14,8 +14,7 @@ export class ApiserviceService {
 
 
   logout(): void {
-       sessionStorage.setItem('isLoggedIn', 'false');
-       sessionStorage.removeItem('authvalue');
+       sessionStorage.removeItem('userId');
        sessionStorage.removeItem('emailvalue');
        sessionStorage.removeItem('passwordvalue');
        sessionStorage.removeItem('userTypevalue');
@@ -79,15 +78,50 @@ export class ApiserviceService {
       });
   }
 
-getAllAdmin(username: any, password: any) {
-    const headers = new HttpHeaders({
-      Authorization: 'Basic ' + btoa(username + ':' + password),
-    });
+  getAllTeleDeclaration(username: any, password: any) {
+        const headers = new HttpHeaders({
+          Authorization: 'Basic ' + btoa(username + ':' + password),
+        });
 
-    return this.http.get(this.baseServerUrl + 'admin', {
-      headers,
-    });
-}
+        return this.http.get(this.baseServerUrl + 'admin/declaration', {
+          headers,
+        });
+  }
+
+  getAllMessages(username: any, password: any) {
+      const headers = new HttpHeaders({
+        Authorization: 'Basic ' + btoa(username + ':' + password),
+      });
+
+      return this.http.get(this.baseServerUrl + 'messages', {
+        headers,
+      });
+  }
+
+  addTMessages(username: any, password: any,Messages:Array<any>) {
+        const headers = new HttpHeaders({
+          Authorization: 'Basic ' + btoa(username + ':' + password),
+        });
+
+        return this.http.post(this.baseServerUrl + 'messages/add',
+         {
+          libelle:Messages[0],
+          id_personne:Messages[1]
+         },
+         {
+          headers,
+        });
+  }
+
+  getAllContribuable(username: any, password: any) {
+        const headers = new HttpHeaders({
+          Authorization: 'Basic ' + btoa(username + ':' + password),
+        });
+
+        return this.http.get(this.baseServerUrl + 'admin/contribuables', {
+          headers,
+        });
+  }
 
 
 }
